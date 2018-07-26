@@ -1,4 +1,4 @@
-package pl.akademiakodu.miniBlog;
+package pl.akademiakodu.miniBlog.Controller;
 
 import org.springframework.stereotype.Controller;
 

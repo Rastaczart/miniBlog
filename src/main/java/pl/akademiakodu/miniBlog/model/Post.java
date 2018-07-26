@@ -1,37 +1,47 @@
-package pl.akademiakodu.miniBlog;
+package pl.akademiakodu.miniBlog.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Post {
-    public String Author;
-    public String Content;
-    public String tittle;
 
-    public String getTittle() {
-        return tittle;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
+
+    public Integer getId() {
+        return id;
     }
 
-    public void setTittle(String tittle) {
-        this.tittle = tittle;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public String getAuthor() {return Author; }
+    private String content;
+    private String title;
 
-    public void setAuthor(String author) {Author = author;}
-
-    public String getContent() {return Content; }
-
-    public void setContent(String content){ Content = content; }
-    public Post(){};
-
-    public Post(String author, String content) {
-        Author = author;
-        Content = content;
+    public Post(String title) {
+        this.title = title;
     }
 
-    @Override
-    public String toString() {
-        return "Post{" +
-                "Author='" + Author + " tittle"+tittle+ '\'' +
-                ", Content='" + Content + '\'' +
-                '}';
+    public String getTitle() {
+        return title;
     }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public Post(){}
 }
